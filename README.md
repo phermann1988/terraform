@@ -1,2 +1,2 @@
 # terraform
-all tf stuff
+all terraform related stuff
