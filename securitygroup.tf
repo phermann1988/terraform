@@ -9,7 +9,7 @@ resource "aws_security_group" "instance" {
     from_port = "${var.server_port}"
     to_port = "${var.server_port}"
     protocol = "tcp"
-    cidr_blocks = ["213.216.20.86/32"]
+    cidr_blocks = ["${var.my_external_ip}"]
   }
 
   egress {
