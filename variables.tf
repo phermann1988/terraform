@@ -4,5 +4,6 @@ variable "server_port" {
 }
 
 variable "my_external_ip" {
-  description = "my extrernal ip address"
+  description = "my external ip address"
+  default = ["213.216.20.86"]
 }
