@@ -9,7 +9,7 @@ resource "aws_security_group" "instance" {
     from_port = "${var.server_port}"
     to_port = "${var.server_port}"
     protocol = "tcp"
-    cidr_blocks = "${formatlist("%s/32", concat(aws_eip.stuff.*.public_ip, aws_eip.things.*.public_ip))}"
+    cidr_blocks = ["213.216.20.86"]
   }
 
   egress {
