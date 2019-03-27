@@ -4,7 +4,6 @@ terraform {
 
 resource "aws_security_group" "ssh" {
   name = "ssh"
-  vpc_id = "${aws_vpc.vpc.id}"
 
   ingress {
     from_port = 22
