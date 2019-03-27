@@ -1,5 +1,8 @@
 ---
-hosts: all
-- tasks:
-  - name: get hostnamectl
-    shell: echo hostname
+- hosts: all
+
+  remote_user: root
+
+  tasks:
+    - name: get hostname
+      shell: hostname
