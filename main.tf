@@ -1,9 +1,16 @@
 provider "aws" {
   region = "us-west-2"
+  # access_key = "${var.access_key}"
+  # secret_key = "${var.secret_key}"
+}
+
+#module
+module "networkModule" {
+  source = "./modules/network"
 }
 
 resource "aws_instance" "example" {
-  vpc_security_group_ids = ["${aws_security_group.instance.id}"]
+  vpc_security_group_ids = ["${module.networkModule.ssh_id}"]
   ami = "ami-03c652d3a09856345"
   instance_type = "t2.micro"
   key_name = "ec2_2"
