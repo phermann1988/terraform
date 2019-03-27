@@ -10,7 +10,7 @@ module "networkModule" {
 }
 
 resource "aws_instance" "webserver" {
-  vpc_security_group_ids = ["${module.networkModule.ssh_id}"]
+  vpc_security_group_ids = ["${module.networkModule.ssh.id}"]
   ami = "ami-03c652d3a09856345"
   instance_type = "t2.micro"
   key_name = "ec2_2"
@@ -32,7 +32,7 @@ resource "aws_instance" "webserver" {
 }
 
 resource "aws_instance" "databaseserver" {
-  vpc_security_group_ids = ["${module.networkModule.ssh_id}"]
+  vpc_security_group_ids = ["${module.networkModule.ssh.id}"]
   ami = "ami-03c652d3a09856345"
   instance_type = "t2.micro"
   key_name = "ec2_2"
