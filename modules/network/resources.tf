@@ -2,8 +2,8 @@ terraform {
   required_version = ">= 0.10.3" # introduction of Local Values configuration language feature
 }
 
-resource "aws_security_group" "sg_22" {
-  name = "sg_22"
+resource "aws_security_group" "ssh" {
+  name = "ssh"
   vpc_id = "${aws_vpc.vpc.id}"
 
   ingress {
