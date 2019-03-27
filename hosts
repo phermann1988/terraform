@@ -1,0 +1,4 @@
+ec2 ansible_host=34.216.171.234 ansible_user=ec2-user
+
+[ec2]
+ec2

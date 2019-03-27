@@ -1,0 +1,5 @@
+---
+  - hosts: all
+  - tasks:
+    - name: get hostnamectl
+      shell: echo hostname
