@@ -2,8 +2,9 @@ terraform {
   required_version = ">= 0.10.3" # introduction of Local Values configuration language feature
 }
 
-resource "aws_security_group" "instance" {
-  name = "ssh"
+resource "aws_security_group" "sg_22" {
+  name = "sg_22"
+  vpc_id = "${aws_vpc.vpc.id}"
 
   ingress {
     from_port = 22
@@ -18,5 +19,7 @@ resource "aws_security_group" "instance" {
     protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+
 
 }

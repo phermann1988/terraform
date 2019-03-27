@@ -10,7 +10,7 @@ module "networkModule" {
 }
 
 resource "aws_instance" "example" {
-  vpc_security_group_ids = ["${module.networkModule.instance.id}"]
+  vpc_security_group_ids = ["${module.networkModule.sg_22_id}"]
   ami = "ami-03c652d3a09856345"
   instance_type = "t2.micro"
   key_name = "ec2_2"
