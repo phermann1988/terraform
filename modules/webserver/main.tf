@@ -1,10 +1,4 @@
 #module
-resource "null_resource" "foo" {
-}
-
-output "foo" {
-  value = null_resource.foo.id
-}
 
 resource "aws_instance" "webserver" {
   vpc_security_group_ids = "sg-52192327"
