@@ -1,1 +1,1 @@
-variable "somevar" {}
+variable "ssh_id" {}

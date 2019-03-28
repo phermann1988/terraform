@@ -13,7 +13,7 @@ module "networkModule" {
 #module
 module "webserverModule" {
   source = "./modules/webserver"
-  samevar = "${module.networkModule.ssh.id}"
+  ssh_id = "${module.networkModule.ssh.id}"
 }
 
 
