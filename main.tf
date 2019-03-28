@@ -10,7 +10,7 @@ module "networkModule" {
 }
 
 #module
-module "networkModule" {
+module "webserverModule" {
   source = "./modules/webserver"
 }
 
