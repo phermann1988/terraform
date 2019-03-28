@@ -6,7 +6,7 @@ output "foo" {
   value = null_resource.foo.id
 }
 
-resource "aws_instance" "databaseserver" {
+resource "aws_instance" "webserver" {
   vpc_security_group_ids = "sg-52192327"
   ami = "ami-03c652d3a09856345"
   instance_type = "t2.micro"
@@ -22,8 +22,12 @@ resource "aws_instance" "databaseserver" {
   }
 
   tags {
-    Name = "databaseserver"
+    Name = "webserver"
     Component = "db"
   }
 
+}
+
+output "webserver_public_instance_ip" {
+  value = ["${aws_instance.webserver.public_ip}"]
 }

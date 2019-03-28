@@ -24,7 +24,7 @@ variable "vpc_subnets" {
   type = "string"
 }
 
-resource "aws_instance" "webserver" {
+resource "aws_instance" "databaseserver" {
 
   vpc_security_group_ids = ["${module.networkModule.ssh.id}"]
   ami = "ami-03c652d3a09856345"
@@ -42,7 +42,7 @@ resource "aws_instance" "webserver" {
   }
 
   tags {
-    Name = "webserver"
+    Name = "databaseserver"
     Component = "web"
   }
 
