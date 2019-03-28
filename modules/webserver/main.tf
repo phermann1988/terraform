@@ -1,7 +1,7 @@
 #module
 
 resource "aws_instance" "webserver" {
-  vpc_security_group_ids = "sg-52192327"
+  #vpc_security_group_ids = "sg-52192327"
   ami = "ami-03c652d3a09856345"
   instance_type = "t2.micro"
   key_name = "ec2_2"
