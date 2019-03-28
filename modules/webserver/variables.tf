@@ -1,1 +1,3 @@
-variable "ssh_id" {}
+variable "ssh_id" {
+  type = string
+}
