@@ -1,6 +1,13 @@
 #module
+resource "null_resource" "foo" {
+}
+
+output "foo" {
+  value = null_resource.foo.id
+}
+
 resource "aws_instance" "databaseserver" {
-  # vpc_security_group_ids = ["${module.networkModule.ssh.id}"]
+  vpc_security_group_ids = "sg-52192327"
   ami = "ami-03c652d3a09856345"
   instance_type = "t2.micro"
   key_name = "ec2_2"

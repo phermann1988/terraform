@@ -4,14 +4,20 @@ provider "aws" {
   # secret_key = "${var.secret_key}"
 }
 
-#module
-module "networkModule" {
-  source = "./modules/network"
-}
 
 #module
 module "webserverModule" {
   source = "./modules/webserver"
+}
+
+resource "null_resource" "bar" {
+  depends_on = [module.webserverModule.foo]
+}
+
+
+#module
+module "networkModule" {
+  source = "./modules/network"
 }
 
 variable "vpc_subnets" {
