@@ -1,4 +1,14 @@
 #module
+variable "vpc_arn" {
+   description = "The ARN of the VPC which is created in the VPC module"
+}
+
+resource "null_resource" "vpc_found" {
+  triggers {
+    vpc_name = "${var.vpc_arn}"
+  }
+}
+
 
 resource "aws_instance" "webserver" {
   vpc_security_group_ids = "sg-52192327"

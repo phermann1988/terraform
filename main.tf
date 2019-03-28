@@ -6,15 +6,17 @@ provider "aws" {
 
 
 #module
+module "networkModule" {
+  source = "./modules/network"
+}
+
+#module
 module "webserverModule" {
   source = "./modules/webserver"
 }
 
 
-#module
-module "networkModule" {
-  source = "./modules/network"
-}
+
 
 # variable "vpc_subnets" {
 #   type = "string"
