@@ -16,9 +16,9 @@ module "webserverModule" {
   ssh_id = "${module.networkModule.ssh.id}"
 }
 
+#module
+module "dbserverModule" {
+  source = "./modules/databaseserver"
+  webserverIP = "${module.webserverModule.webserver_public_instance_ip}"
+}
 
-
-
-# variable "vpc_subnets" {
-#   type = "string"
-# }
