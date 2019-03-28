@@ -1,3 +1,5 @@
 variable "ssh_id" {
-  type = string
+  #type        = "list"
+  #description = "My App SQS Queues"
 }
+
