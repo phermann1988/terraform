@@ -11,6 +11,7 @@ resource "null_resource" "vpc_found" {
 
 
 resource "aws_instance" "webserver" {
+  depends_on = ["null_resource.vpc_found"]
   vpc_security_group_ids = "sg-52192327"
   ami = "ami-03c652d3a09856345"
   instance_type = "t2.micro"
