@@ -10,10 +10,6 @@ module "webserverModule" {
   source = "./modules/webserver"
 }
 
-resource "null_resource" "bar" {
-  depends_on = [module.webserverModule.foo]
-}
-
 
 #module
 module "networkModule" {
